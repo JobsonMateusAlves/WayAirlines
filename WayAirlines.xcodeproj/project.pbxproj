@@ -1,0 +1,697 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F655282F2CB34B9000731803 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F655282E2CB34B9000731803 /* AppDelegate.swift */; };
+		F65528312CB34B9000731803 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65528302CB34B9000731803 /* SceneDelegate.swift */; };
+		F65528332CB34B9000731803 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65528322CB34B9000731803 /* ViewController.swift */; };
+		F65528362CB34B9000731803 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F65528342CB34B9000731803 /* Main.storyboard */; };
+		F65528382CB34B9200731803 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F65528372CB34B9200731803 /* Assets.xcassets */; };
+		F655283B2CB34B9200731803 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F65528392CB34B9200731803 /* LaunchScreen.storyboard */; };
+		F65528462CB34B9300731803 /* WayAirlinesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65528452CB34B9300731803 /* WayAirlinesTests.swift */; };
+		F65528502CB34B9300731803 /* WayAirlinesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F655284F2CB34B9300731803 /* WayAirlinesUITests.swift */; };
+		F65528522CB34B9300731803 /* WayAirlinesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65528512CB34B9300731803 /* WayAirlinesUITestsLaunchTests.swift */; };
+		F655286A2CB34CBE00731803 /* DataLayer in Frameworks */ = {isa = PBXBuildFile; productRef = F65528692CB34CBE00731803 /* DataLayer */; };
+		F655286C2CB34CBE00731803 /* DomainLayer in Frameworks */ = {isa = PBXBuildFile; productRef = F655286B2CB34CBE00731803 /* DomainLayer */; };
+		F655286E2CB34CBE00731803 /* NetworkLayer in Frameworks */ = {isa = PBXBuildFile; productRef = F655286D2CB34CBE00731803 /* NetworkLayer */; };
+		F65528702CB34CBE00731803 /* PresentationLayer in Frameworks */ = {isa = PBXBuildFile; productRef = F655286F2CB34CBE00731803 /* PresentationLayer */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F65528422CB34B9300731803 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F65528232CB34B9000731803 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F655282A2CB34B9000731803;
+			remoteInfo = WayAirlines;
+		};
+		F655284C2CB34B9300731803 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F65528232CB34B9000731803 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F655282A2CB34B9000731803;
+			remoteInfo = WayAirlines;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F655282B2CB34B9000731803 /* WayAirlines.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WayAirlines.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F655282E2CB34B9000731803 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F65528302CB34B9000731803 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		F65528322CB34B9000731803 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F65528352CB34B9000731803 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F65528372CB34B9200731803 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F655283A2CB34B9200731803 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F655283C2CB34B9200731803 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F65528412CB34B9300731803 /* WayAirlinesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WayAirlinesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F65528452CB34B9300731803 /* WayAirlinesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WayAirlinesTests.swift; sourceTree = "<group>"; };
+		F655284B2CB34B9300731803 /* WayAirlinesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WayAirlinesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F655284F2CB34B9300731803 /* WayAirlinesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WayAirlinesUITests.swift; sourceTree = "<group>"; };
+		F65528512CB34B9300731803 /* WayAirlinesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WayAirlinesUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F655285E2CB34BD000731803 /* NetworkLayer */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = NetworkLayer; sourceTree = "<group>"; };
+		F65528642CB34CA000731803 /* DataLayer */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DataLayer; sourceTree = "<group>"; };
+		F65528652CB34CA300731803 /* DomainLayer */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DomainLayer; sourceTree = "<group>"; };
+		F65528662CB34CA500731803 /* PresentationLayer */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = PresentationLayer; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F65528282CB34B9000731803 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F655286E2CB34CBE00731803 /* NetworkLayer in Frameworks */,
+				F655286C2CB34CBE00731803 /* DomainLayer in Frameworks */,
+				F65528702CB34CBE00731803 /* PresentationLayer in Frameworks */,
+				F655286A2CB34CBE00731803 /* DataLayer in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F655283E2CB34B9300731803 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F65528482CB34B9300731803 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F65528222CB34B9000731803 = {
+			isa = PBXGroup;
+			children = (
+				F65528662CB34CA500731803 /* PresentationLayer */,
+				F65528652CB34CA300731803 /* DomainLayer */,
+				F65528642CB34CA000731803 /* DataLayer */,
+				F655285E2CB34BD000731803 /* NetworkLayer */,
+				F655282D2CB34B9000731803 /* WayAirlines */,
+				F65528442CB34B9300731803 /* WayAirlinesTests */,
+				F655284E2CB34B9300731803 /* WayAirlinesUITests */,
+				F655282C2CB34B9000731803 /* Products */,
+				F655285F2CB34BEC00731803 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F655282C2CB34B9000731803 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F655282B2CB34B9000731803 /* WayAirlines.app */,
+				F65528412CB34B9300731803 /* WayAirlinesTests.xctest */,
+				F655284B2CB34B9300731803 /* WayAirlinesUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F655282D2CB34B9000731803 /* WayAirlines */ = {
+			isa = PBXGroup;
+			children = (
+				F655282E2CB34B9000731803 /* AppDelegate.swift */,
+				F65528302CB34B9000731803 /* SceneDelegate.swift */,
+				F65528322CB34B9000731803 /* ViewController.swift */,
+				F65528342CB34B9000731803 /* Main.storyboard */,
+				F65528372CB34B9200731803 /* Assets.xcassets */,
+				F65528392CB34B9200731803 /* LaunchScreen.storyboard */,
+				F655283C2CB34B9200731803 /* Info.plist */,
+			);
+			path = WayAirlines;
+			sourceTree = "<group>";
+		};
+		F65528442CB34B9300731803 /* WayAirlinesTests */ = {
+			isa = PBXGroup;
+			children = (
+				F65528452CB34B9300731803 /* WayAirlinesTests.swift */,
+			);
+			path = WayAirlinesTests;
+			sourceTree = "<group>";
+		};
+		F655284E2CB34B9300731803 /* WayAirlinesUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F655284F2CB34B9300731803 /* WayAirlinesUITests.swift */,
+				F65528512CB34B9300731803 /* WayAirlinesUITestsLaunchTests.swift */,
+			);
+			path = WayAirlinesUITests;
+			sourceTree = "<group>";
+		};
+		F655285F2CB34BEC00731803 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F655282A2CB34B9000731803 /* WayAirlines */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F65528552CB34B9300731803 /* Build configuration list for PBXNativeTarget "WayAirlines" */;
+			buildPhases = (
+				F65528272CB34B9000731803 /* Sources */,
+				F65528282CB34B9000731803 /* Frameworks */,
+				F65528292CB34B9000731803 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F65528722CB34CCB00731803 /* PBXTargetDependency */,
+				F65528742CB34CCB00731803 /* PBXTargetDependency */,
+				F65528762CB34CCB00731803 /* PBXTargetDependency */,
+				F65528632CB34BF600731803 /* PBXTargetDependency */,
+			);
+			name = WayAirlines;
+			packageProductDependencies = (
+				F65528692CB34CBE00731803 /* DataLayer */,
+				F655286B2CB34CBE00731803 /* DomainLayer */,
+				F655286D2CB34CBE00731803 /* NetworkLayer */,
+				F655286F2CB34CBE00731803 /* PresentationLayer */,
+			);
+			productName = WayAirlines;
+			productReference = F655282B2CB34B9000731803 /* WayAirlines.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F65528402CB34B9300731803 /* WayAirlinesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F65528582CB34B9300731803 /* Build configuration list for PBXNativeTarget "WayAirlinesTests" */;
+			buildPhases = (
+				F655283D2CB34B9300731803 /* Sources */,
+				F655283E2CB34B9300731803 /* Frameworks */,
+				F655283F2CB34B9300731803 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F65528432CB34B9300731803 /* PBXTargetDependency */,
+			);
+			name = WayAirlinesTests;
+			productName = WayAirlinesTests;
+			productReference = F65528412CB34B9300731803 /* WayAirlinesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F655284A2CB34B9300731803 /* WayAirlinesUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F655285B2CB34B9300731803 /* Build configuration list for PBXNativeTarget "WayAirlinesUITests" */;
+			buildPhases = (
+				F65528472CB34B9300731803 /* Sources */,
+				F65528482CB34B9300731803 /* Frameworks */,
+				F65528492CB34B9300731803 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F655284D2CB34B9300731803 /* PBXTargetDependency */,
+			);
+			name = WayAirlinesUITests;
+			productName = WayAirlinesUITests;
+			productReference = F655284B2CB34B9300731803 /* WayAirlinesUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F65528232CB34B9000731803 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					F655282A2CB34B9000731803 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					F65528402CB34B9300731803 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = F655282A2CB34B9000731803;
+					};
+					F655284A2CB34B9300731803 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = F655282A2CB34B9000731803;
+					};
+				};
+			};
+			buildConfigurationList = F65528262CB34B9000731803 /* Build configuration list for PBXProject "WayAirlines" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F65528222CB34B9000731803;
+			productRefGroup = F655282C2CB34B9000731803 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F655282A2CB34B9000731803 /* WayAirlines */,
+				F65528402CB34B9300731803 /* WayAirlinesTests */,
+				F655284A2CB34B9300731803 /* WayAirlinesUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F65528292CB34B9000731803 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F655283B2CB34B9200731803 /* LaunchScreen.storyboard in Resources */,
+				F65528382CB34B9200731803 /* Assets.xcassets in Resources */,
+				F65528362CB34B9000731803 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F655283F2CB34B9300731803 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F65528492CB34B9300731803 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F65528272CB34B9000731803 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F65528332CB34B9000731803 /* ViewController.swift in Sources */,
+				F655282F2CB34B9000731803 /* AppDelegate.swift in Sources */,
+				F65528312CB34B9000731803 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F655283D2CB34B9300731803 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F65528462CB34B9300731803 /* WayAirlinesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F65528472CB34B9300731803 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F65528502CB34B9300731803 /* WayAirlinesUITests.swift in Sources */,
+				F65528522CB34B9300731803 /* WayAirlinesUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F65528432CB34B9300731803 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F655282A2CB34B9000731803 /* WayAirlines */;
+			targetProxy = F65528422CB34B9300731803 /* PBXContainerItemProxy */;
+		};
+		F655284D2CB34B9300731803 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F655282A2CB34B9000731803 /* WayAirlines */;
+			targetProxy = F655284C2CB34B9300731803 /* PBXContainerItemProxy */;
+		};
+		F65528632CB34BF600731803 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = F65528622CB34BF600731803 /* NetworkLayer */;
+		};
+		F65528722CB34CCB00731803 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = F65528712CB34CCB00731803 /* PresentationLayer */;
+		};
+		F65528742CB34CCB00731803 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = F65528732CB34CCB00731803 /* DomainLayer */;
+		};
+		F65528762CB34CCB00731803 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = F65528752CB34CCB00731803 /* DataLayer */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F65528342CB34B9000731803 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F65528352CB34B9000731803 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F65528392CB34B9200731803 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F655283A2CB34B9200731803 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F65528532CB34B9300731803 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F65528542CB34B9300731803 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F65528562CB34B9300731803 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CV9626UTW7;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WayAirlines/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jobson.WayAirlines;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F65528572CB34B9300731803 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CV9626UTW7;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WayAirlines/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jobson.WayAirlines;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F65528592CB34B9300731803 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CV9626UTW7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jobson.WayAirlinesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WayAirlines.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WayAirlines";
+			};
+			name = Debug;
+		};
+		F655285A2CB34B9300731803 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CV9626UTW7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jobson.WayAirlinesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WayAirlines.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WayAirlines";
+			};
+			name = Release;
+		};
+		F655285C2CB34B9300731803 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CV9626UTW7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jobson.WayAirlinesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WayAirlines;
+			};
+			name = Debug;
+		};
+		F655285D2CB34B9300731803 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CV9626UTW7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jobson.WayAirlinesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WayAirlines;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F65528262CB34B9000731803 /* Build configuration list for PBXProject "WayAirlines" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F65528532CB34B9300731803 /* Debug */,
+				F65528542CB34B9300731803 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F65528552CB34B9300731803 /* Build configuration list for PBXNativeTarget "WayAirlines" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F65528562CB34B9300731803 /* Debug */,
+				F65528572CB34B9300731803 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F65528582CB34B9300731803 /* Build configuration list for PBXNativeTarget "WayAirlinesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F65528592CB34B9300731803 /* Debug */,
+				F655285A2CB34B9300731803 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F655285B2CB34B9300731803 /* Build configuration list for PBXNativeTarget "WayAirlinesUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F655285C2CB34B9300731803 /* Debug */,
+				F655285D2CB34B9300731803 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F65528622CB34BF600731803 /* NetworkLayer */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NetworkLayer;
+		};
+		F65528692CB34CBE00731803 /* DataLayer */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DataLayer;
+		};
+		F655286B2CB34CBE00731803 /* DomainLayer */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DomainLayer;
+		};
+		F655286D2CB34CBE00731803 /* NetworkLayer */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NetworkLayer;
+		};
+		F655286F2CB34CBE00731803 /* PresentationLayer */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PresentationLayer;
+		};
+		F65528712CB34CCB00731803 /* PresentationLayer */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PresentationLayer;
+		};
+		F65528732CB34CCB00731803 /* DomainLayer */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DomainLayer;
+		};
+		F65528752CB34CCB00731803 /* DataLayer */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DataLayer;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = F65528232CB34B9000731803 /* Project object */;
+}
