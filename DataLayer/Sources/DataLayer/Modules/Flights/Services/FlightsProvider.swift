@@ -8,13 +8,13 @@
 import Foundation
 import NetworkLayer
 
-protocol FlightsProviderProtocol {
-    func getFlights() async throws -> [Flight]
+public protocol FlightsProviderProtocol {
+    func list() async throws -> [Flight]
 }
 
 class FlightsProvider: Provider, FlightsProviderProtocol {
     
-    func getFlights() async throws -> [Flight] {
+    func list() async throws -> [Flight] {
         let result = try await self.request(target: FlightsAPI.list, responseType: FlightsResponse.self)
         return result.flights
     }

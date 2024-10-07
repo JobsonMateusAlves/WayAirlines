@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import DomainLayer
 
-struct Flight: Codable {
+public struct Flight: Codable {
     let flightId: String
     let status: String
     let completionStatus: String
@@ -33,14 +34,19 @@ struct Flight: Codable {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
+extension Flight {
+    func toDomain() -> DomainLayer.Flight {
+        DomainLayer.Flight(
+            flightId: flightId,
+            status: status,
+            completionStatus: completionStatus,
+            startDate: startDate,
+            endDate: endDate,
+            departureTime: departureTime,
+            arrivalTime: arrivalTime,
+            departureAirport: departureAirport,
+            arrivalAirport: arrivalAirport,
+            airplaneName: airplaneName
+        )
+    }
+}
