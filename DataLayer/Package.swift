@@ -5,6 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "DataLayer",
+    platforms: [.iOS(.v15)],
     products: [
         .library(
             name: "DataLayer",
@@ -23,7 +24,7 @@ let package = Package(
                 "DomainLayer"
             ],
             resources: [
-                .process("Resources/flights.json")
+                .process("Resources")
             ]
         ),
         .testTarget(
