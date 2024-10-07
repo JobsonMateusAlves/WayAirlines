@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class Provider {
+open class Provider {
     let session: URLSessionProtocol
     
     public init(session: URLSessionProtocol) {
