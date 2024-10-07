@@ -29,7 +29,7 @@ final class FlightsRepositoryTests: XCTestCase {
         
         let domainLayerFlight = DomainLayer.Flight(
             flightId: "AB123",
-            status: "CONCLUIDO",
+            status: DomainLayer.Flight.Status.completed,
             completionStatus: "ATRASOU",
             startDate: "2024-08-01",
             endDate: "2024-08-01",

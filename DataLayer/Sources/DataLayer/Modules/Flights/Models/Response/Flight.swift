@@ -38,12 +38,10 @@ extension Flight {
     func toDomain() -> DomainLayer.Flight {
         DomainLayer.Flight(
             flightId: flightId,
-            status: status,
+            status: DomainLayer.Flight.Status(rawValue: status),
             completionStatus: completionStatus,
-            startDate: startDate,
-            endDate: endDate,
-            departureTime: departureTime,
-            arrivalTime: arrivalTime,
+            departureDateTime: Date.from(string: "\(startDate) \(departureTime)") ?? Date(),
+            arrivalDateTime: Date.from(string: "\(endDate) \(arrivalTime)") ?? Date(),
             departureAirport: departureAirport,
             arrivalAirport: arrivalAirport,
             airplaneName: airplaneName

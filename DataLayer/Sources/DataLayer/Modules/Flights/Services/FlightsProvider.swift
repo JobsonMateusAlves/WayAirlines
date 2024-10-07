@@ -20,8 +20,8 @@ class FlightsProvider: Provider, FlightsProviderProtocol {
     }
 }
 
-struct FlightsProviderFactory {
-    static func make(config: Configs = .network) -> FlightsProviderProtocol {
+public struct FlightsProviderFactory {
+    public static func make(config: Configs = .network) -> FlightsProviderProtocol {
         FlightsProvider(session: config.session(by: "flights"))
     }
 }

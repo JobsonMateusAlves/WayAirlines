@@ -8,14 +8,14 @@
 import Foundation
 import DomainLayer
 
-class FlightsRepository: FlightsRepositoryProtocol {
+public class FlightsRepository: FlightsRepositoryProtocol {
     let provider: FlightsProviderProtocol
     
-    init(provider: FlightsProviderProtocol) {
+    public init(provider: FlightsProviderProtocol) {
         self.provider = provider
     }
     
-    func list() async throws -> [DomainLayer.Flight] {
+    public func list() async throws -> [DomainLayer.Flight] {
         let result = try await self.provider.list().map({ $0.toDomain() })
         return result
     }
