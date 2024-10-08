@@ -31,10 +31,8 @@ final class FlightsRepositoryTests: XCTestCase {
             flightId: "AB123",
             status: DomainLayer.Flight.Status.completed,
             completionStatus: "ATRASOU",
-            startDate: "2024-08-01",
-            endDate: "2024-08-01",
-            departureTime: "10:00",
-            arrivalTime: "14:00",
+            departureDateTime: Date.from(string: "2024-08-01 10:00")!,
+            arrivalDateTime: Date.from(string: "2024-08-01 14:00")!,
             departureAirport: "JFK - John F. Kennedy International Airport",
             arrivalAirport: "LAX - Los Angeles International Airport",
             airplaneName: "Boeing 737"
