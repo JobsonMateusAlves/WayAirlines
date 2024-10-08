@@ -20,7 +20,7 @@ public class GetNextFlightLeavingUseCase: GetNextFlightLeavingUseCaseProtocol {
     }
     
     public func execute(completion: @escaping (Flight?, String?) -> Void) {
-        Task {
+        Task { @MainActor in
             do {
                 let results = try await self.repository.list()
                 let flight = results.sorted(by: { $0.departureDateTime < $1.departureDateTime })

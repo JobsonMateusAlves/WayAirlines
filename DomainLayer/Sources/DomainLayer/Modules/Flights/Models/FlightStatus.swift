@@ -12,4 +12,5 @@ public enum FlightStatus {
     case canceled
     case inProgress
     case pending
+    case all
 }
