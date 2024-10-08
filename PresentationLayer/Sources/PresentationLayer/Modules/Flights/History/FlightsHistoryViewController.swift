@@ -7,23 +7,76 @@
 
 import UIKit
 
-class FlightsHistoryViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+public class FlightsHistoryViewController: UIViewController {
+    let tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.backgroundColor = .white
+        return tableView
+    }()
+    
+    private let viewModel: FlightsHistoryViewModelProtocol
+    
+    public init(viewModel: FlightsHistoryViewModelProtocol) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
-    */
+    
+    public override func viewDidLoad() {
+        super.viewDidLoad()
 
+        self.setupLayout()
+        self.setupTableView()
+        self.viewModel.list(status: .all) { [weak self] in
+            self?.tableView.reloadData()
+        }
+    }
+    
+    private func setupTableView() {
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        self.tableView.register(FlightTableViewCell.self, forCellReuseIdentifier: "FlightTableViewCell")
+    }
+}
+
+extension FlightsHistoryViewController {
+    private func setupLayout() {
+        self.view.addSubview(self.tableView)
+        self.setupTableViewLayoutConstraints()
+    }
+    
+    private func setupTableViewLayoutConstraints() {
+        NSLayoutConstraint.activate([
+            self.tableView.topAnchor.constraint(equalTo: self.view.topAnchor),
+            self.tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+            self.tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            self.tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+        ])
+    }
+}
+
+extension FlightsHistoryViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        120
+    }
+    
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        viewModel.flights.count
+    }
+    
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "FlightTableViewCell", for: indexPath) as? FlightTableViewCell else {
+            return UITableViewCell()
+        }
+        
+        cell.bind(flight: viewModel.flights[indexPath.row])
+        
+        return cell
+    }
 }

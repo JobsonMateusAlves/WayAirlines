@@ -44,6 +44,8 @@ extension Flight {
             arrivalDateTime: Date.from(string: "\(endDate) \(arrivalTime)") ?? Date(),
             departureAirport: departureAirport,
             arrivalAirport: arrivalAirport,
+            departureAirportAbbreviation: departureAirport.components(separatedBy: " - ").first ?? "",
+            arrivalAirportAbbreviation: arrivalAirport.components(separatedBy: " - ").first ?? "",
             airplaneName: airplaneName
         )
     }

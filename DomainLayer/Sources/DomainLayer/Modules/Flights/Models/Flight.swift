@@ -20,9 +20,11 @@ public struct Flight: Equatable {
     public let arrivalDateTime: Date
     public let departureAirport: String
     public let arrivalAirport: String
+    public let departureAirportAbbreviation: String
+    public let arrivalAirportAbbreviation: String
     public let airplaneName: String
     
-    public init(flightId: String, status: Status?, completionStatus: String, departureDateTime: Date, arrivalDateTime: Date, departureAirport: String, arrivalAirport: String, airplaneName: String) {
+    public init(flightId: String, status: Status?, completionStatus: String, departureDateTime: Date, arrivalDateTime: Date, departureAirport: String, arrivalAirport: String, departureAirportAbbreviation: String, arrivalAirportAbbreviation: String, airplaneName: String) {
         self.flightId = flightId
         self.status = status
         self.completionStatus = completionStatus
@@ -30,6 +32,8 @@ public struct Flight: Equatable {
         self.arrivalDateTime = arrivalDateTime
         self.departureAirport = departureAirport
         self.arrivalAirport = arrivalAirport
+        self.departureAirportAbbreviation = departureAirportAbbreviation
+        self.arrivalAirportAbbreviation = arrivalAirportAbbreviation
         self.airplaneName = airplaneName
     }
 }
