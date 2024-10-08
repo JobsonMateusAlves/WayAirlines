@@ -43,13 +43,10 @@ class FlightTableViewCell: UITableViewCell {
         return label
     }()
     
-    let flightStatusLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .black
-        label.font = .systemFont(ofSize: 13, weight: .medium)
-        label.textAlignment = .left
-        return label
+    let flightStatusTagView: TagView = {
+        let view = TagView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }()
     
     // MARK: Departure
@@ -136,7 +133,9 @@ class FlightTableViewCell: UITableViewCell {
         self.flightLabel.text = "Voo \(flight.flightId)"
         self.departureTimeLabel.text = "Partida: \(flight.departureDateTime.toString())"
         self.arrivalTimeLabel.text = "Chegada: \(flight.arrivalDateTime.toString())"
-        self.flightStatusLabel.text = flight.status?.rawValue ?? ""
+        if let flightStatus = flight.status {
+            self.flightStatusTagView.bind(tag: flightStatus.rawValue, color: flightStatus.color)
+        }
         
         self.departureImageView.image = Images.airplaneDeparture
         self.arrivalImageView.image = Images.airplaneArrival
@@ -157,6 +156,7 @@ extension FlightTableViewCell {
         self.addSubview(self.stackView)
         
         self.setupFlightStackView()
+        self.setupFlightStatusTagView()
         self.setupStackView()
         self.setupDepartureStackView()
         self.setupArrivalStackView()
@@ -173,7 +173,6 @@ extension FlightTableViewCell {
         self.flightStackView.addArrangedSubview(self.flightLabel)
         self.flightStackView.addArrangedSubview(self.departureTimeLabel)
         self.flightStackView.addArrangedSubview(self.arrivalTimeLabel)
-        self.flightStackView.addArrangedSubview(self.flightStatusLabel)
     }
     
     func setupStackView() {
@@ -197,5 +196,19 @@ extension FlightTableViewCell {
     func setupArrivalStackView() {
         self.arrivalStackView.addArrangedSubview(self.arrivalImageView)
         self.arrivalStackView.addArrangedSubview(self.arrivalLabel)
+    }
+    
+    func setupFlightStatusTagView() {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(self.flightStatusTagView)
+        self.flightStackView.addArrangedSubview(view)
+        
+        NSLayoutConstraint.activate([
+            self.flightStatusTagView.topAnchor.constraint(equalTo: view.topAnchor),
+            self.flightStatusTagView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            self.flightStatusTagView.trailingAnchor.constraint(lessThanOrEqualTo: view.trailingAnchor, constant: -8),
+            self.flightStatusTagView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+        ])
     }
 }
