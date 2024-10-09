@@ -8,7 +8,7 @@
 import UIKit
 
 class TagView: UIView {
-    let tagLabel: UILabel = {
+    lazy var tagLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 13, weight: .medium)

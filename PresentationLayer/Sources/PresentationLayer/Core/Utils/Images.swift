@@ -14,4 +14,5 @@ public struct Images {
     public static let arrowRight = UIImage(systemName: "arrow.right")
     public static let home = UIImage(systemName: "house")
     public static let airplane = UIImage(systemName: "airplane")
+    public static let filter = UIImage(systemName: "line.3.horizontal.decrease.circle")
 }

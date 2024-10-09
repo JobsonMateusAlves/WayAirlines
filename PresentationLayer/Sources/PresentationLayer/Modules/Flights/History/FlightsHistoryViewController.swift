@@ -6,13 +6,22 @@
 //
 
 import UIKit
+import DomainLayer
 
 class FlightsHistoryViewController: UIViewController {
-    let tableView: UITableView = {
+    lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.backgroundColor = .white
         return tableView
+    }()
+    
+    lazy var filterButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitleColor(Colors.primaryColor, for: .normal)
+        button.contentHorizontalAlignment = .trailing
+        return button
     }()
     
     private let viewModel: FlightsHistoryViewModelProtocol
@@ -29,34 +38,58 @@ class FlightsHistoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "Voos"
+        title = "Voos"
         
-        self.setupLayout()
-        self.setupTableView()
-        self.viewModel.list(status: .all) { [weak self] in
+        setupLayout()
+        setupTableView()
+        setupButton()
+        viewModel.list { [weak self] in
             self?.tableView.reloadData()
         }
     }
     
     private func setupTableView() {
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
-        self.tableView.register(FlightTableViewCell.self, forCellReuseIdentifier: "FlightTableViewCell")
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(FlightTableViewCell.self, forCellReuseIdentifier: "FlightTableViewCell")
+    }
+    
+    private func setupButton() {
+        filterButton.setTitle(viewModel.flightStatus.rawValue, for: .normal)
+        filterButton.addTarget(self, action: #selector(showFilter), for: .touchUpInside)
+    }
+    
+    @objc func showFilter() {
+        let controller = FilterViewController(items: viewModel.statusItems.map({ $0.rawValue }), delegate: self)
+        self.present(controller, animated: true)
+        
+        controller.headerLabel.text = "Selecione uma opção para filtrar"
     }
 }
 
 extension FlightsHistoryViewController {
     private func setupLayout() {
-        self.view.addSubview(self.tableView)
-        self.setupTableViewLayoutConstraints()
+        view.addSubview(filterButton)
+        view.addSubview(tableView)
+        setupFilterButtonLayout()
+        setupTableViewLayout()
     }
     
-    private func setupTableViewLayoutConstraints() {
+    private func setupFilterButtonLayout() {
         NSLayoutConstraint.activate([
-            self.tableView.topAnchor.constraint(equalTo: self.view.topAnchor),
-            self.tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
-            self.tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-            self.tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            filterButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            filterButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            filterButton.heightAnchor.constraint(equalToConstant: 40),
+            filterButton.widthAnchor.constraint(equalToConstant: 120),
+        ])
+    }
+    
+    private func setupTableViewLayout() {
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: self.filterButton.bottomAnchor),
+            tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+            tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
         ])
     }
 }
@@ -68,7 +101,7 @@ extension FlightsHistoryViewController: UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        self.viewModel.flights.count
+        viewModel.flights.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -80,5 +113,16 @@ extension FlightsHistoryViewController: UITableViewDelegate, UITableViewDataSour
         cell.bind(flight: viewModel.flights[indexPath.row])
         
         return cell
+    }
+}
+
+extension FlightsHistoryViewController: FilterViewControllerDelegate {
+    func didSelect(item: String) {
+        viewModel.changeFlightStatus(status: FlightStatus(rawValue: item) ?? .all)
+        setupButton()
+        
+        viewModel.list { [weak self] in
+            self?.tableView.reloadData()
+        }
     }
 }

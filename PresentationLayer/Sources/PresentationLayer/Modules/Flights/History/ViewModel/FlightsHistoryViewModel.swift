@@ -10,15 +10,19 @@ import DomainLayer
 
 public protocol FlightsHistoryViewModelProtocol {
     var flights: [Flight] { get set }
+    var flightStatus: FlightStatus { get set }
+    var statusItems: [FlightStatus] { get set }
     var error: String? { get set }
     
-    func list(status: FlightStatus, completion: @escaping () -> Void)
+    func changeFlightStatus(status: FlightStatus)
+    func list(completion: @escaping () -> Void)
 }
 
 class FlightsHistoryViewModel: FlightsHistoryViewModelProtocol {
     let useCase: ListFlightsUseCaseProtocol
     
     var flightStatus: FlightStatus = .all
+    var statusItems: [FlightStatus] = FlightStatus.allCases
     
     var flights: [Flight] = []
     var error: String?
@@ -27,8 +31,7 @@ class FlightsHistoryViewModel: FlightsHistoryViewModelProtocol {
         self.useCase = useCase
     }
     
-    func list(status: FlightStatus, completion: @escaping () -> Void) {
-        self.flightStatus = status
+    func list(completion: @escaping () -> Void) {
         self.useCase.execute(
             status: flightStatus
         ) { [weak self] flights, error in
@@ -41,5 +44,9 @@ class FlightsHistoryViewModel: FlightsHistoryViewModelProtocol {
             }
             completion()
         }
+    }
+    
+    func changeFlightStatus(status: FlightStatus) {
+        flightStatus = status
     }
 }

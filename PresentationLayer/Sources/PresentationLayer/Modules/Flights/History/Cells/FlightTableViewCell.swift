@@ -10,7 +10,7 @@ import DomainLayer
 
 class FlightTableViewCell: UITableViewCell {
     
-    let stackView: UIStackView = {
+    lazy var stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.distribution = .fillEqually
@@ -18,7 +18,7 @@ class FlightTableViewCell: UITableViewCell {
         return stackView
     }()
     
-    let arrowImageView: UIImageView = {
+    lazy var arrowImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .center
@@ -26,7 +26,7 @@ class FlightTableViewCell: UITableViewCell {
     }()
     
     // MARK: Flight
-    let flightStackView: UIStackView = {
+    lazy var flightStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.distribution = .fillEqually
@@ -34,7 +34,7 @@ class FlightTableViewCell: UITableViewCell {
         return stackView
     }()
     
-    let flightLabel: UILabel = {
+    lazy var flightLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .black
@@ -43,14 +43,14 @@ class FlightTableViewCell: UITableViewCell {
         return label
     }()
     
-    let flightStatusTagView: TagView = {
+    lazy var flightStatusTagView: TagView = {
         let view = TagView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
     // MARK: Departure
-    let departureStackView: UIStackView = {
+    lazy var departureStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.distribution = .fillEqually
@@ -58,14 +58,14 @@ class FlightTableViewCell: UITableViewCell {
         return stackView
     }()
     
-    let departureImageView: UIImageView = {
+    lazy var departureImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()
     
-    let departureLabel: UILabel = {
+    lazy var departureLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = Colors.primaryColor
@@ -73,7 +73,7 @@ class FlightTableViewCell: UITableViewCell {
         return label
     }()
     
-    let departureTimeLabel: UILabel = {
+    lazy var departureTimeLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .black
@@ -83,7 +83,7 @@ class FlightTableViewCell: UITableViewCell {
     }()
     
     // MARK: Arrival
-    let arrivalStackView: UIStackView = {
+    lazy var arrivalStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.distribution = .fillEqually
@@ -91,14 +91,14 @@ class FlightTableViewCell: UITableViewCell {
         return stackView
     }()
     
-    let arrivalImageView: UIImageView = {
+    lazy var arrivalImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()
     
-    let arrivalLabel: UILabel = {
+    lazy var arrivalLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = Colors.primaryColor
@@ -106,7 +106,7 @@ class FlightTableViewCell: UITableViewCell {
         return label
     }()
     
-    let arrivalTimeLabel: UILabel = {
+    lazy var arrivalTimeLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .black
