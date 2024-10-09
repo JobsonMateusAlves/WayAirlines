@@ -13,4 +13,5 @@ public struct Colors {
     public static let tagRedColor = UIColor.red
     public static let primaryColor = UIColor.white
     public static let secondaryColor = UIColor(hex: "AAAAAA")
+    public static let primaryButtonColor = UIColor(hex: "346EAC")
 }

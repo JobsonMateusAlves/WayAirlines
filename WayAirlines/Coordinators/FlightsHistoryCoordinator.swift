@@ -22,7 +22,6 @@ class FlightsHistoryCoordinator: Coordinator {
     func start() {
         let viewController = FlightsHistoryFactory.make(coordinator: self)
         viewController.hidesBottomBarWhenPushed = false
-        viewController.tabBarItem = UITabBarItem(title: "Voos", image: Images.airplane, tag: 1)
         navigationController.setViewControllers([viewController], animated: false)
     }
     

@@ -27,6 +27,7 @@ class MainCoordinator: Coordinator {
         homeNavController.tabBarItem = UITabBarItem(title: "Home", image: Images.home, tag: 0)
         flightsHistoryNavController.tabBarItem = UITabBarItem(title: "Voos", image: Images.airplane, tag: 1)
         
+        startHome(navigationController: homeNavController)
         startFlightsHistory(navigationController: flightsHistoryNavController)
         
         tabBarController.viewControllers = [
@@ -35,6 +36,12 @@ class MainCoordinator: Coordinator {
         ]
         
         navigationController.setViewControllers([tabBarController], animated: false)
+    }
+    
+    func startHome(navigationController: UINavigationController) {
+        let coordinator = HomeCoordinator(navigationController: navigationController)
+        self.childCoordinators.append(coordinator)
+        coordinator.start()
     }
     
     func startFlightsHistory(navigationController: UINavigationController) {
