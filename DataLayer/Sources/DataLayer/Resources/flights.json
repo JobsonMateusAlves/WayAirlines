@@ -26,10 +26,10 @@
         },
         {
             "flight_id": "EF789",
-            "status": "",
-            "completion_status": "NO_HORARIO",
-            "start_date": "2024-11-05",
-            "end_date": "2024-11-05",
+            "status": "CANCELADO",
+            "completion_status": "CANCELADO",
+            "start_date": "2024-08-05",
+            "end_date": "2024-08-05",
             "departure_time": "08:00",
             "arrival_time": "11:30",
             "departure_airport": "SFO - San Francisco International Airport",
@@ -239,6 +239,78 @@
             "departure_airport": "LAX - Los Angeles International Airport",
             "arrival_airport": "ATL - Hartsfield-Jackson Atlanta International Airport",
             "airplane_name": "Airbus A320"
-        }
+        },
+        {
+            "flight_id": "EF938",
+            "status": "",
+            "completion_status": "NO_HORARIO",
+            "start_date": "2024-11-05",
+            "end_date": "2024-11-05",
+            "departure_time": "08:00",
+            "arrival_time": "11:30",
+            "departure_airport": "SFO - San Francisco International Airport",
+            "arrival_airport": "SEA - Seattle-Tacoma International Airport",
+            "airplane_name": "Boeing 747"
+        },
+        {
+            "flight_id": "EF019",
+            "status": "",
+            "completion_status": "NO_HORARIO",
+            "start_date": "2024-10-09",
+            "end_date": "2024-10-09",
+            "departure_time": "08:00",
+            "arrival_time": "23:59",
+            "departure_airport": "SFO - San Francisco International Airport",
+            "arrival_airport": "SEA - Seattle-Tacoma International Airport",
+            "airplane_name": "Boeing 747"
+        },
+        {
+            "flight_id": "EF299",
+            "status": "",
+            "completion_status": "NO_HORARIO",
+            "start_date": "2024-10-10",
+            "end_date": "2024-10-10",
+            "departure_time": "08:00",
+            "arrival_time": "23:59",
+            "departure_airport": "SFO - San Francisco International Airport",
+            "arrival_airport": "SEA - Seattle-Tacoma International Airport",
+            "airplane_name": "Boeing 747"
+        },
+        {
+            "flight_id": "EF300",
+            "status": "",
+            "completion_status": "NO_HORARIO",
+            "start_date": "2024-10-11",
+            "end_date": "2024-10-11",
+            "departure_time": "08:00",
+            "arrival_time": "23:59",
+            "departure_airport": "SFO - San Francisco International Airport",
+            "arrival_airport": "SEA - Seattle-Tacoma International Airport",
+            "airplane_name": "Boeing 747"
+        },
+        {
+            "flight_id": "EF301",
+            "status": "",
+            "completion_status": "NO_HORARIO",
+            "start_date": "2024-10-12",
+            "end_date": "2024-10-12",
+            "departure_time": "08:00",
+            "arrival_time": "23:59",
+            "departure_airport": "SFO - San Francisco International Airport",
+            "arrival_airport": "SEA - Seattle-Tacoma International Airport",
+            "airplane_name": "Boeing 747"
+        },
+        {
+            "flight_id": "EF302",
+            "status": "",
+            "completion_status": "NO_HORARIO",
+            "start_date": "2024-10-13",
+            "end_date": "2024-10-13",
+            "departure_time": "08:00",
+            "arrival_time": "23:59",
+            "departure_airport": "SFO - San Francisco International Airport",
+            "arrival_airport": "SEA - Seattle-Tacoma International Airport",
+            "airplane_name": "Boeing 747"
+        },
     ]
 }
