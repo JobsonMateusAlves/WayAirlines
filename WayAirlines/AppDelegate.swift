@@ -32,8 +32,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private func setupAppearence() {
         let appearance = UINavigationBarAppearance()
-        appearance.configureWithTransparentBackground()
-        appearance.backgroundColor = .clear
+
+        appearance.backgroundColor = .white
         appearance.titleTextAttributes = [.foregroundColor: Colors.primaryColor]
         appearance.largeTitleTextAttributes = [.foregroundColor: Colors.primaryColor]
         
