@@ -10,7 +10,6 @@
 		F655282F2CB34B9000731803 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F655282E2CB34B9000731803 /* AppDelegate.swift */; };
 		F65528312CB34B9000731803 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65528302CB34B9000731803 /* SceneDelegate.swift */; };
 		F65528332CB34B9000731803 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65528322CB34B9000731803 /* ViewController.swift */; };
-		F65528362CB34B9000731803 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F65528342CB34B9000731803 /* Main.storyboard */; };
 		F65528382CB34B9200731803 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F65528372CB34B9200731803 /* Assets.xcassets */; };
 		F655283B2CB34B9200731803 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F65528392CB34B9200731803 /* LaunchScreen.storyboard */; };
 		F65528462CB34B9300731803 /* WayAirlinesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65528452CB34B9300731803 /* WayAirlinesTests.swift */; };
@@ -44,7 +43,6 @@
 		F655282E2CB34B9000731803 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F65528302CB34B9000731803 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F65528322CB34B9000731803 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F65528352CB34B9000731803 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F65528372CB34B9200731803 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F655283A2CB34B9200731803 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F655283C2CB34B9200731803 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -119,7 +117,6 @@
 				F655282E2CB34B9000731803 /* AppDelegate.swift */,
 				F65528302CB34B9000731803 /* SceneDelegate.swift */,
 				F65528322CB34B9000731803 /* ViewController.swift */,
-				F65528342CB34B9000731803 /* Main.storyboard */,
 				F65528372CB34B9200731803 /* Assets.xcassets */,
 				F65528392CB34B9200731803 /* LaunchScreen.storyboard */,
 				F655283C2CB34B9200731803 /* Info.plist */,
@@ -267,7 +264,6 @@
 			files = (
 				F655283B2CB34B9200731803 /* LaunchScreen.storyboard in Resources */,
 				F65528382CB34B9200731803 /* Assets.xcassets in Resources */,
-				F65528362CB34B9000731803 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,14 +343,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		F65528342CB34B9000731803 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F65528352CB34B9000731803 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F65528392CB34B9200731803 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -497,7 +485,7 @@
 				INFOPLIST_FILE = WayAirlines/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -525,7 +513,7 @@
 				INFOPLIST_FILE = WayAirlines/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
