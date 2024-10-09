@@ -1,6 +1,11 @@
 # WayAirlines
 ![iOS version](https://img.shields.io/badge/iOS-15\+-blue) ![Swift version](https://img.shields.io/badge/Swift-v5.9-orange)
 
+Comando para rodar o projeto: Command + R
+
+Para executar os testes:
+Selecione o Scheme de testes da camada que deseja testar e execute Command + U.
+
 ## Visão geral do projeto
 WayAirlines é uma aplicação desenvolvida auxiliar na gestão e acompanhamento dos voos. A principal funcionalidade é uma lista completa de voos, onde o usuário pode filtrar entre as seguintes categorias: voos concluídos, cancelados, em andamento, e a realizar.
 
