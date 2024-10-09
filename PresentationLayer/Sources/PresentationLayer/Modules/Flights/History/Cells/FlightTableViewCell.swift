@@ -68,7 +68,7 @@ class FlightTableViewCell: UITableViewCell {
     let departureLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .black
+        label.textColor = Colors.primaryColor
         label.textAlignment = .center
         return label
     }()
@@ -101,7 +101,7 @@ class FlightTableViewCell: UITableViewCell {
     let arrivalLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .black
+        label.textColor = Colors.primaryColor
         label.textAlignment = .center
         return label
     }()
@@ -141,9 +141,9 @@ class FlightTableViewCell: UITableViewCell {
         self.arrivalImageView.image = Images.airplaneArrival
         self.arrowImageView.image = Images.arrowRight
         
-        self.departureImageView.tintColor = .black
-        self.arrivalImageView.tintColor = .black
-        self.arrowImageView.tintColor = .black
+        self.departureImageView.tintColor = Colors.primaryColor
+        self.arrivalImageView.tintColor = Colors.primaryColor
+        self.arrowImageView.tintColor = Colors.primaryColor
         
         self.departureLabel.text = flight.departureAirportAbbreviation
         self.arrivalLabel.text = flight.arrivalAirportAbbreviation
