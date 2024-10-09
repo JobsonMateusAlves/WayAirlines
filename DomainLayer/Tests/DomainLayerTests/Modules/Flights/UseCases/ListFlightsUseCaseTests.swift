@@ -82,7 +82,6 @@ final class FlightsRepositoryTests: XCTestCase {
         
         let sut = FlightsUseCaseFactory.makeListFlights(with: repository)
         sut.execute(status: .all) { flights, error in
-            XCTAssertEqual(flights?.count, self.flights.count)
             XCTAssertEqual(flights, self.flights)
             XCTAssertNil(error)
             expectation.fulfill()
@@ -126,7 +125,6 @@ final class FlightsRepositoryTests: XCTestCase {
         
         let sut = FlightsUseCaseFactory.makeListFlights(with: repository)
         sut.execute(status: .completed) { flights, error in
-            XCTAssertEqual(flights?.count, completedFlights.count)
             XCTAssertEqual(flights, completedFlights)
             XCTAssertNil(error)
             
@@ -159,7 +157,6 @@ final class FlightsRepositoryTests: XCTestCase {
         
         let sut = FlightsUseCaseFactory.makeListFlights(with: repository)
         sut.execute(status: .canceled) { flights, error in
-            XCTAssertEqual(flights?.count, canceledFlights.count)
             XCTAssertEqual(flights, canceledFlights)
             XCTAssertNil(error)
             
@@ -224,7 +221,6 @@ final class FlightsRepositoryTests: XCTestCase {
         
         let sut = FlightsUseCaseFactory.makeListFlights(with: repository)
         sut.execute(status: .pending) { flights, error in
-            XCTAssertEqual(flights?.count, pendingFlights.count)
             XCTAssertEqual(flights, pendingFlights)
             XCTAssertNil(error)
             
