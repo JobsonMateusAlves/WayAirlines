@@ -21,6 +21,7 @@ class FlightsHistoryCoordinator: Coordinator {
     
     func start() {
         let viewController = FlightsHistoryFactory.make()
+        viewController.tabBarItem = UITabBarItem(title: "Voos", image: Images.airplane, tag: 1)
         navigationController.setViewControllers([viewController], animated: false)
     }
 }

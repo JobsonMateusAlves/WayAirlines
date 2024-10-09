@@ -22,6 +22,7 @@
 		F6AF79D82CB60E7800925FB7 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AF79D72CB60E7700925FB7 /* MainCoordinator.swift */; };
 		F6AF79DA2CB6105800925FB7 /* FlightsHistoryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AF79D92CB6105800925FB7 /* FlightsHistoryCoordinator.swift */; };
 		F6AF79DD2CB6168600925FB7 /* FlightsHistoryFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AF79DC2CB6168600925FB7 /* FlightsHistoryFactory.swift */; };
+		F6AF79E02CB6207A00925FB7 /* UITabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AF79DF2CB6207A00925FB7 /* UITabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		F6AF79D72CB60E7700925FB7 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		F6AF79D92CB6105800925FB7 /* FlightsHistoryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsHistoryCoordinator.swift; sourceTree = "<group>"; };
 		F6AF79DC2CB6168600925FB7 /* FlightsHistoryFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsHistoryFactory.swift; sourceTree = "<group>"; };
+		F6AF79DF2CB6207A00925FB7 /* UITabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 		F655282D2CB34B9000731803 /* WayAirlines */ = {
 			isa = PBXGroup;
 			children = (
+				F6AF79DE2CB6206000925FB7 /* Extensions */,
 				F6AF79DB2CB6157800925FB7 /* Factories */,
 				F6AF79D62CB60DDF00925FB7 /* Coordinators */,
 				F655282E2CB34B9000731803 /* AppDelegate.swift */,
@@ -171,6 +174,14 @@
 				F6AF79DC2CB6168600925FB7 /* FlightsHistoryFactory.swift */,
 			);
 			path = Factories;
+			sourceTree = "<group>";
+		};
+		F6AF79DE2CB6206000925FB7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F6AF79DF2CB6207A00925FB7 /* UITabBarController.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,6 +324,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6AF79E02CB6207A00925FB7 /* UITabBarController.swift in Sources */,
 				F6AF79DA2CB6105800925FB7 /* FlightsHistoryCoordinator.swift in Sources */,
 				F65528332CB34B9000731803 /* ViewController.swift in Sources */,
 				F6AF79D82CB60E7800925FB7 /* MainCoordinator.swift in Sources */,

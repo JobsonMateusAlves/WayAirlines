@@ -7,7 +7,8 @@
 
 import UIKit
 
-struct Colors {
-    static let tagGreenColor = UIColor(hex: "03AC13")
-    static let tagRedColor = UIColor.red
+public struct Colors {
+    public static let tagGreenColor = UIColor(hex: "03AC13")
+    public static let tagRedColor = UIColor.red
+    public static let primaryColor = UIColor(hex: "153374")
 }

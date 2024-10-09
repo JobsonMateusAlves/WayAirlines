@@ -19,19 +19,26 @@ class MainCoordinator: Coordinator {
     }
     
     func start() {
-        tabBarController.hidesBottomBarWhenPushed = true
+        tabBarController.setupAppearence()
         
-        startFlightsHistory()
-
-        tabBarController.viewControllers = self.childCoordinators.map({
-            $0.navigationController
-        })
+        let homeNavController = UINavigationController()
+        let flightsHistoryNavController = UINavigationController()
+        
+        homeNavController.tabBarItem = UITabBarItem(title: "Home", image: Images.home, tag: 0)
+        flightsHistoryNavController.tabBarItem = UITabBarItem(title: "Voos", image: Images.airplane, tag: 1)
+        
+        startFlightsHistory(navigationController: flightsHistoryNavController)
+        
+        tabBarController.viewControllers = [
+            homeNavController,
+            flightsHistoryNavController
+        ]
         
         navigationController.setViewControllers([tabBarController], animated: false)
     }
     
-    func startFlightsHistory() {
-        let coordinator = FlightsHistoryCoordinator(navigationController: UINavigationController())
+    func startFlightsHistory(navigationController: UINavigationController) {
+        let coordinator = FlightsHistoryCoordinator(navigationController: navigationController)
         self.childCoordinators.append(coordinator)
         coordinator.start()
     }

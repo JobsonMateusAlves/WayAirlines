@@ -29,6 +29,8 @@ class FlightsHistoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.title = "Voos"
+        
         self.setupLayout()
         self.setupTableView()
         self.viewModel.list(status: .all) { [weak self] in
