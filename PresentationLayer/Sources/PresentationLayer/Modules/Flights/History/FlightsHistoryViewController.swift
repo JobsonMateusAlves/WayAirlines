@@ -67,7 +67,7 @@ class FlightsHistoryViewController: UIViewController {
     
     private func setupFilterButton() {
         filterImageView.image = Images.filter
-        filterButton.setTitle(viewModel.flightStatus.rawValue, for: .normal)
+        filterButton.setTitle(viewModel.status.rawValue, for: .normal)
         filterButton.addTarget(self, action: #selector(showFilter), for: .touchUpInside)
     }
     
@@ -147,7 +147,7 @@ extension FlightsHistoryViewController: UITableViewDelegate, UITableViewDataSour
 
 extension FlightsHistoryViewController: FilterViewControllerDelegate {
     func didSelect(item: String) {
-        viewModel.changeFlightStatus(status: FlightStatus(rawValue: item) ?? .all)
+        viewModel.changeFlightStatus(status: Status(rawValue: item) ?? .all)
         setupFilterButton()
         
         viewModel.list { [weak self] in

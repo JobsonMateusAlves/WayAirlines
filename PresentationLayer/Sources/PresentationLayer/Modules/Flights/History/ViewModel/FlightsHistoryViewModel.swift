@@ -10,11 +10,11 @@ import DomainLayer
 
 public protocol FlightsHistoryViewModelProtocol {
     var flights: [Flight] { get set }
-    var flightStatus: FlightStatus { get set }
-    var statusItems: [FlightStatus] { get set }
+    var status: Status { get set }
+    var statusItems: [Status] { get set }
     var error: String? { get set }
     
-    func changeFlightStatus(status: FlightStatus)
+    func changeFlightStatus(status: Status)
     func list(completion: @escaping () -> Void)
     func didSelect(flight: Flight)
 }
@@ -26,8 +26,8 @@ public protocol FlightsHistoryViewModelDelegate {
 class FlightsHistoryViewModel: FlightsHistoryViewModelProtocol {
     let useCase: ListFlightsUseCaseProtocol
     
-    var flightStatus: FlightStatus = .all
-    var statusItems: [FlightStatus] = FlightStatus.allCases
+    var status: Status = .all
+    var statusItems: [Status] = Status.allCases
     
     var flights: [Flight] = []
     var error: String?
@@ -41,7 +41,7 @@ class FlightsHistoryViewModel: FlightsHistoryViewModelProtocol {
     
     func list(completion: @escaping () -> Void) {
         self.useCase.execute(
-            status: flightStatus
+            status: status
         ) { [weak self] flights, error in
             if let error {
                 self?.error = error
@@ -54,8 +54,8 @@ class FlightsHistoryViewModel: FlightsHistoryViewModelProtocol {
         }
     }
     
-    func changeFlightStatus(status: FlightStatus) {
-        flightStatus = status
+    func changeFlightStatus(status: Status) {
+        self.status = status
     }
     
     func didSelect(flight: Flight) {

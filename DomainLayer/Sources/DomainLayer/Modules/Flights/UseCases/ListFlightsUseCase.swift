@@ -8,7 +8,7 @@
 import Foundation
 
 public protocol ListFlightsUseCaseProtocol {
-    func execute(status: FlightStatus, completion: @escaping ([Flight]?, String?) -> Void)
+    func execute(status: Status, completion: @escaping ([Flight]?, String?) -> Void)
 }
 
 class ListFlightsUseCase: ListFlightsUseCaseProtocol {
@@ -19,7 +19,7 @@ class ListFlightsUseCase: ListFlightsUseCaseProtocol {
         self.repository = repository
     }
     
-    func execute(status: FlightStatus, completion: @escaping ([Flight]?, String?) -> Void) {
+    func execute(status: Status, completion: @escaping ([Flight]?, String?) -> Void) {
         Task { @MainActor in
             do {
                 let now = DateSystem.shared.getNow()
