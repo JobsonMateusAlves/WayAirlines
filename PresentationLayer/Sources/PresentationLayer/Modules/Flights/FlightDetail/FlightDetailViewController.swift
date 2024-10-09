@@ -17,6 +17,15 @@ class FlightDetailViewController: UIViewController {
         return stackView
     }()
     
+    lazy var statusStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.distribution = .fillEqually
+        stackView.axis = .horizontal
+        stackView.spacing = 16
+        return stackView
+    }()
+    
     lazy var arrowImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -194,14 +203,14 @@ extension FlightDetailViewController {
         view.addSubview(flightStackView)
         view.addSubview(flightStatusTagView)
         view.addSubview(flightCompletionStatusTagView)
+        view.addSubview(statusStackView)
         
         setupStackView()
         setupDepartureStackView()
         setupArrivalStackView()
         
         setupFlightStackView()
-        setupFlightStatusTagView()
-        setupFlightCompletionStatusTagView()
+        setupStatusStackView()
     }
     
     private func setupStackView() {
@@ -241,18 +250,15 @@ extension FlightDetailViewController {
         flightStackView.addArrangedSubview(arrivalTimeLabel)
     }
     
-    private func setupFlightStatusTagView() {
+    private func setupStatusStackView() {
         NSLayoutConstraint.activate([
-            flightStatusTagView.topAnchor.constraint(equalTo: flightStackView.bottomAnchor, constant: 16),
-            flightStatusTagView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16)
+            statusStackView.topAnchor.constraint(equalTo: flightStackView.bottomAnchor, constant: 16),
+            statusStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            statusStackView.trailingAnchor.constraint(lessThanOrEqualTo: view.trailingAnchor, constant: -16)
         ])
-    }
-    
-    private func setupFlightCompletionStatusTagView() {
-        NSLayoutConstraint.activate([
-            flightCompletionStatusTagView.centerYAnchor.constraint(equalTo: flightStatusTagView.centerYAnchor),
-            flightCompletionStatusTagView.leadingAnchor.constraint(equalTo: flightStatusTagView.trailingAnchor, constant: 16)
-        ])
+        
+        statusStackView.addArrangedSubview(flightStatusTagView)
+        statusStackView.addArrangedSubview(flightCompletionStatusTagView)
     }
 }
 
