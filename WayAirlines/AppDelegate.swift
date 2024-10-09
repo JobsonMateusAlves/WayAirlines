@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func setupAppearence() {
         let appearance = UINavigationBarAppearance()
         appearance.configureWithTransparentBackground()
-        appearance.backgroundColor = .white
+        appearance.backgroundColor = .black
         appearance.titleTextAttributes = [.foregroundColor: Colors.primaryColor]
         appearance.largeTitleTextAttributes = [.foregroundColor: Colors.primaryColor]
         
@@ -42,7 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().compactAppearance = appearance
         UINavigationBar.appearance().scrollEdgeAppearance = appearance
         UINavigationBar.appearance().tintColor = Colors.primaryColor
-        UITableView.appearance().backgroundColor = .white
+        UITableView.appearance().backgroundColor = .black
     }
 }
 

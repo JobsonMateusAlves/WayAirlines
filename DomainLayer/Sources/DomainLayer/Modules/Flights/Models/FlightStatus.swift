@@ -7,10 +7,10 @@
 
 import Foundation
 
-public enum FlightStatus {
-    case completed
-    case canceled
-    case inProgress
-    case pending
-    case all
+public enum FlightStatus: String, CaseIterable {
+    case completed = "Concluído"
+    case canceled = "Cancelado"
+    case inProgress = "Em viagem"
+    case pending = "A realizar"
+    case all = "Todos"
 }

@@ -16,6 +16,11 @@ public protocol FlightsHistoryViewModelProtocol {
     
     func changeFlightStatus(status: FlightStatus)
     func list(completion: @escaping () -> Void)
+    func didSelect(flight: Flight)
+}
+
+public protocol FlightsHistoryViewModelDelegate {
+    func didSelect(flight: Flight)
 }
 
 class FlightsHistoryViewModel: FlightsHistoryViewModelProtocol {
@@ -27,8 +32,11 @@ class FlightsHistoryViewModel: FlightsHistoryViewModelProtocol {
     var flights: [Flight] = []
     var error: String?
     
-    init(useCase: ListFlightsUseCaseProtocol) {
+    weak var coordinator: (Coordinator & FlightsHistoryViewModelDelegate)?
+    
+    init(useCase: ListFlightsUseCaseProtocol, coordinator: (Coordinator & FlightsHistoryViewModelDelegate)) {
         self.useCase = useCase
+        self.coordinator = coordinator
     }
     
     func list(completion: @escaping () -> Void) {
@@ -48,5 +56,9 @@ class FlightsHistoryViewModel: FlightsHistoryViewModelProtocol {
     
     func changeFlightStatus(status: FlightStatus) {
         flightStatus = status
+    }
+    
+    func didSelect(flight: Flight) {
+        coordinator?.didSelect(flight: flight)
     }
 }

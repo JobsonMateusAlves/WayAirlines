@@ -12,13 +12,11 @@ extension UITabBarController {
     func setupAppearence() {
         let appearance = UITabBarAppearance()
         appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = .white
+        appearance.backgroundColor = .black
         
         tabBar.standardAppearance = appearance
         tabBar.scrollEdgeAppearance = appearance
         tabBar.isTranslucent = true
         tabBar.tintColor = Colors.primaryColor
-        
-        hidesBottomBarWhenPushed = true
     }
 }

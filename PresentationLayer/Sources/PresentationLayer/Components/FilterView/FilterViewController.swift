@@ -16,7 +16,7 @@ class FilterViewController: UIViewController {
     lazy var headerLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .black
+        label.textColor = Colors.primaryColor
         label.font = .systemFont(ofSize: 15, weight: .semibold)
         label.textAlignment = .left
         return label
@@ -25,7 +25,7 @@ class FilterViewController: UIViewController {
     lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.backgroundColor = .white
+        tableView.backgroundColor = .black
         return tableView
     }()
     
@@ -49,7 +49,7 @@ class FilterViewController: UIViewController {
         setupTableView()
         
         tableView.reloadData()
-        view.backgroundColor = .white
+        view.backgroundColor = .black
     }
     
     private func setupTableView() {

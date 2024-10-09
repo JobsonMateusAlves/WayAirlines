@@ -12,15 +12,24 @@ class FlightsHistoryViewController: UIViewController {
     lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.backgroundColor = .white
+        tableView.backgroundColor = .black
         return tableView
+    }()
+    
+    lazy var filterImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.tintColor = Colors.primaryColor
+        imageView.contentMode = .scaleAspectFit
+        return imageView
     }()
     
     lazy var filterButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(Colors.primaryColor, for: .normal)
-        button.contentHorizontalAlignment = .trailing
+        button.titleLabel?.font = .systemFont(ofSize: 17, weight: .bold)
+        button.contentHorizontalAlignment = .leading
         return button
     }()
     
@@ -40,9 +49,11 @@ class FlightsHistoryViewController: UIViewController {
 
         title = "Voos"
         
+        view.backgroundColor = .black
+        
         setupLayout()
         setupTableView()
-        setupButton()
+        setupFilterButton()
         viewModel.list { [weak self] in
             self?.tableView.reloadData()
         }
@@ -54,7 +65,8 @@ class FlightsHistoryViewController: UIViewController {
         tableView.register(FlightTableViewCell.self, forCellReuseIdentifier: "FlightTableViewCell")
     }
     
-    private func setupButton() {
+    private func setupFilterButton() {
+        filterImageView.image = Images.filter
         filterButton.setTitle(viewModel.flightStatus.rawValue, for: .normal)
         filterButton.addTarget(self, action: #selector(showFilter), for: .touchUpInside)
     }
@@ -69,16 +81,28 @@ class FlightsHistoryViewController: UIViewController {
 
 extension FlightsHistoryViewController {
     private func setupLayout() {
+        view.addSubview(filterImageView)
         view.addSubview(filterButton)
         view.addSubview(tableView)
+        
+        setupFilterImageViewLayout()
         setupFilterButtonLayout()
         setupTableViewLayout()
+    }
+    
+    private func setupFilterImageViewLayout() {
+        NSLayoutConstraint.activate([
+            filterImageView.centerYAnchor.constraint(equalTo: filterButton.centerYAnchor),
+            filterImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            filterImageView.heightAnchor.constraint(equalToConstant: 20),
+            filterImageView.widthAnchor.constraint(equalToConstant: 20),
+        ])
     }
     
     private func setupFilterButtonLayout() {
         NSLayoutConstraint.activate([
             filterButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            filterButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            filterButton.leadingAnchor.constraint(equalTo: filterImageView.trailingAnchor, constant: 8),
             filterButton.heightAnchor.constraint(equalToConstant: 40),
             filterButton.widthAnchor.constraint(equalToConstant: 120),
         ])
@@ -114,12 +138,17 @@ extension FlightsHistoryViewController: UITableViewDelegate, UITableViewDataSour
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.didSelect(flight: viewModel.flights[indexPath.row])
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
 
 extension FlightsHistoryViewController: FilterViewControllerDelegate {
     func didSelect(item: String) {
         viewModel.changeFlightStatus(status: FlightStatus(rawValue: item) ?? .all)
-        setupButton()
+        setupFilterButton()
         
         viewModel.list { [weak self] in
             self?.tableView.reloadData()

@@ -13,7 +13,7 @@ public struct FlightsHistoryFactory {
         FlightsHistoryViewController(viewModel: viewModel)
     }
     
-    public static func makeViewModel(with useCase: ListFlightsUseCaseProtocol) -> FlightsHistoryViewModelProtocol {
-        FlightsHistoryViewModel(useCase: useCase)
+    public static func makeViewModel(with useCase: ListFlightsUseCaseProtocol, coordinator: (Coordinator & FlightsHistoryViewModelDelegate)) -> FlightsHistoryViewModelProtocol {
+        FlightsHistoryViewModel(useCase: useCase, coordinator: coordinator)
     }
 }

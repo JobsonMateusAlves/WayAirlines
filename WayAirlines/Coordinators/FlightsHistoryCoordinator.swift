@@ -20,8 +20,21 @@ class FlightsHistoryCoordinator: Coordinator {
     }
     
     func start() {
-        let viewController = FlightsHistoryFactory.make()
+        let viewController = FlightsHistoryFactory.make(coordinator: self)
+        viewController.hidesBottomBarWhenPushed = false
         viewController.tabBarItem = UITabBarItem(title: "Voos", image: Images.airplane, tag: 1)
         navigationController.setViewControllers([viewController], animated: false)
+    }
+    
+    func startFlightDetail(flight: DomainLayer.Flight) {
+        let coordinator = FlightDetailCoordinator(flight: flight, navigationController: navigationController)
+        self.childCoordinators.append(coordinator)
+        coordinator.start()
+    }
+}
+
+extension FlightsHistoryCoordinator: FlightsHistoryViewModelDelegate {
+    func didSelect(flight: DomainLayer.Flight) {
+        startFlightDetail(flight: flight)
     }
 }

@@ -11,7 +11,7 @@ class FilterItemTableViewCell: UITableViewCell {
     lazy var itemLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .black
+        label.textColor = Colors.primaryColor
         label.font = .systemFont(ofSize: 15, weight: .semibold)
         label.textAlignment = .left
         return label
@@ -24,7 +24,7 @@ class FilterItemTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupLayout()
-        backgroundColor = .white
+        backgroundColor = .black
     }
     
     required init?(coder: NSCoder) {

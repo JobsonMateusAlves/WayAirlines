@@ -10,5 +10,6 @@ import UIKit
 public struct Colors {
     public static let tagGreenColor = UIColor(hex: "03AC13")
     public static let tagRedColor = UIColor.red
-    public static let primaryColor = UIColor(hex: "153374")
+    public static let primaryColor = UIColor.white
+    public static let secondaryColor = UIColor(hex: "AAAAAA")
 }

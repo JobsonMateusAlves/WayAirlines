@@ -37,7 +37,7 @@ class FlightTableViewCell: UITableViewCell {
     lazy var flightLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .black
+        label.textColor = Colors.primaryColor
         label.font = .systemFont(ofSize: 15, weight: .semibold)
         label.textAlignment = .left
         return label
@@ -68,7 +68,7 @@ class FlightTableViewCell: UITableViewCell {
     lazy var departureLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = Colors.primaryColor
+        label.textColor = Colors.secondaryColor
         label.textAlignment = .center
         return label
     }()
@@ -76,7 +76,7 @@ class FlightTableViewCell: UITableViewCell {
     lazy var departureTimeLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .black
+        label.textColor = Colors.primaryColor
         label.font = .systemFont(ofSize: 12, weight: .regular)
         label.textAlignment = .left
         return label
@@ -101,7 +101,7 @@ class FlightTableViewCell: UITableViewCell {
     lazy var arrivalLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = Colors.primaryColor
+        label.textColor = Colors.secondaryColor
         label.textAlignment = .center
         return label
     }()
@@ -109,7 +109,7 @@ class FlightTableViewCell: UITableViewCell {
     lazy var arrivalTimeLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .black
+        label.textColor = Colors.primaryColor
         label.font = .systemFont(ofSize: 12, weight: .regular)
         label.textAlignment = .left
         return label
@@ -122,7 +122,7 @@ class FlightTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.setupLayout()
-        self.backgroundColor = .white
+        self.backgroundColor = .black
     }
     
     required init?(coder: NSCoder) {
@@ -141,9 +141,9 @@ class FlightTableViewCell: UITableViewCell {
         self.arrivalImageView.image = Images.airplaneArrival
         self.arrowImageView.image = Images.arrowRight
         
-        self.departureImageView.tintColor = Colors.primaryColor
-        self.arrivalImageView.tintColor = Colors.primaryColor
-        self.arrowImageView.tintColor = Colors.primaryColor
+        self.departureImageView.tintColor = Colors.secondaryColor
+        self.arrivalImageView.tintColor = Colors.secondaryColor
+        self.arrowImageView.tintColor = Colors.secondaryColor
         
         self.departureLabel.text = flight.departureAirportAbbreviation
         self.arrivalLabel.text = flight.arrivalAirportAbbreviation
