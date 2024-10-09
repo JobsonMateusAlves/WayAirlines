@@ -12,24 +12,19 @@ import DataLayer
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
+    
+    var mainCoordinator: Coordinator?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        let window = UIWindow(windowScene: windowScene)
+        self.window = UIWindow(windowScene: windowScene)
         
-        window.rootViewController = UINavigationController(
-            rootViewController: FlightsHistoryViewController(
-                viewModel: FlightsHistoryViewModel(
-                    useCase: ListFlightsUseCase(
-                        repository: FlightsRepository(
-                            provider: FlightsProviderFactory.make(config: .mock)
-                        )
-                    )
-                )
-            )
-        )
-        window.backgroundColor = UIColor.white
-        self.window = window
+        let navigationController = UINavigationController()
+        mainCoordinator = MainCoordinator(navigationController: navigationController)
+        mainCoordinator?.start()
+        
+        self.window?.rootViewController = navigationController
+        self.window?.backgroundColor = UIColor.white
         self.window?.makeKeyAndVisible()
     }
 
