@@ -19,4 +19,8 @@ class DateSystem {
     func getNow() -> Date {
         date ?? Date()
     }
+    
+    func set(date: Date) {
+        self.date = date
+    }
 }
