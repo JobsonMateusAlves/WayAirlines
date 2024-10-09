@@ -32,3 +32,7 @@ O padrão Coordinators permite que a resposabilidade da navegação seja delegad
 ### Serviço:
 
 Foi criado um provider ja preparado para a utilização em requisições reais mas, como solicitado, o app utiliza as informações do arquivo flights.json. Para isso foi criado um MockURLSession que é responsavel pela leitura do arquivo e é passado como dependencia para o Provider que utiliza esta classe como se fosse um URLSession comum.
+
+### Arquivo json:
+
+Foram adicionados alguns voos no arquivo json com datas mais atuais para possibilitar a visualização das features "Voos a realizar" e "Voos em viagem" que foram solicitadas.
