@@ -121,8 +121,8 @@ class FlightTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.setupLayout()
-        self.backgroundColor = .black
+        setupLayout()
+        backgroundColor = .black
     }
     
     required init?(coder: NSCoder) {
@@ -130,85 +130,85 @@ class FlightTableViewCell: UITableViewCell {
     }
     
     func bind(flight: Flight) {
-        self.flightLabel.text = "Voo \(flight.flightId)"
-        self.departureTimeLabel.text = "Partida: \(flight.departureDateTime.toString())"
-        self.arrivalTimeLabel.text = "Chegada: \(flight.arrivalDateTime.toString())"
+        flightLabel.text = "Voo \(flight.flightId)"
+        departureTimeLabel.text = "Partida: \(flight.departureDateTime.toString())"
+        arrivalTimeLabel.text = "Chegada: \(flight.arrivalDateTime.toString())"
         if let flightStatus = flight.status {
-            self.flightStatusTagView.bind(tag: flightStatus.rawValue, color: flightStatus.color)
+            flightStatusTagView.bind(tag: flightStatus.rawValue.capitalized, color: flightStatus.color)
         }
         
-        self.departureImageView.image = Images.airplaneDeparture
-        self.arrivalImageView.image = Images.airplaneArrival
-        self.arrowImageView.image = Images.arrowRight
+        departureImageView.image = Images.airplaneDeparture
+        arrivalImageView.image = Images.airplaneArrival
+        arrowImageView.image = Images.arrowRight
         
-        self.departureImageView.tintColor = Colors.secondaryColor
-        self.arrivalImageView.tintColor = Colors.secondaryColor
-        self.arrowImageView.tintColor = Colors.secondaryColor
+        departureImageView.tintColor = Colors.secondaryColor
+        arrivalImageView.tintColor = Colors.secondaryColor
+        arrowImageView.tintColor = Colors.secondaryColor
         
-        self.departureLabel.text = flight.departureAirportAbbreviation
-        self.arrivalLabel.text = flight.arrivalAirportAbbreviation
+        departureLabel.text = flight.departureAirportAbbreviation
+        arrivalLabel.text = flight.arrivalAirportAbbreviation
     }
 }
 
 extension FlightTableViewCell {
-    func setupLayout() {
-        self.addSubview(self.flightStackView)
-        self.addSubview(self.stackView)
+    private func setupLayout() {
+        addSubview(flightStackView)
+        addSubview(stackView)
         
-        self.setupFlightStackView()
-        self.setupFlightStatusTagView()
-        self.setupStackView()
-        self.setupDepartureStackView()
-        self.setupArrivalStackView()
+        setupFlightStackView()
+        setupFlightStatusTagView()
+        setupStackView()
+        setupDepartureStackView()
+        setupArrivalStackView()
     }
     
-    func setupFlightStackView() {
+    private func setupFlightStackView() {
         NSLayoutConstraint.activate([
-            self.flightStackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 16),
-            self.flightStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -16),
-            self.flightStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
-            self.flightStackView.trailingAnchor.constraint(equalTo: self.stackView.leadingAnchor, constant: -8),
+            flightStackView.topAnchor.constraint(equalTo: topAnchor, constant: 16),
+            flightStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16),
+            flightStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            flightStackView.trailingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: -8),
         ])
         
-        self.flightStackView.addArrangedSubview(self.flightLabel)
-        self.flightStackView.addArrangedSubview(self.departureTimeLabel)
-        self.flightStackView.addArrangedSubview(self.arrivalTimeLabel)
+        flightStackView.addArrangedSubview(flightLabel)
+        flightStackView.addArrangedSubview(departureTimeLabel)
+        flightStackView.addArrangedSubview(arrivalTimeLabel)
     }
     
-    func setupStackView() {
+    private func setupStackView() {
         NSLayoutConstraint.activate([
-            self.stackView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            self.stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
-            self.stackView.heightAnchor.constraint(equalToConstant: 64),
-            self.stackView.widthAnchor.constraint(equalToConstant: 120)
+            stackView.centerYAnchor.constraint(equalTo: centerYAnchor),
+            stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            stackView.heightAnchor.constraint(equalToConstant: 64),
+            stackView.widthAnchor.constraint(equalToConstant: 120)
         ])
         
-        self.stackView.addArrangedSubview(self.departureStackView)
-        self.stackView.addArrangedSubview(self.arrowImageView)
-        self.stackView.addArrangedSubview(self.arrivalStackView)
+        stackView.addArrangedSubview(departureStackView)
+        stackView.addArrangedSubview(arrowImageView)
+        stackView.addArrangedSubview(arrivalStackView)
     }
     
-    func setupDepartureStackView() {
-        self.departureStackView.addArrangedSubview(self.departureImageView)
-        self.departureStackView.addArrangedSubview(self.departureLabel)
+    private func setupDepartureStackView() {
+        departureStackView.addArrangedSubview(departureImageView)
+        departureStackView.addArrangedSubview(departureLabel)
     }
     
-    func setupArrivalStackView() {
-        self.arrivalStackView.addArrangedSubview(self.arrivalImageView)
-        self.arrivalStackView.addArrangedSubview(self.arrivalLabel)
+    private func setupArrivalStackView() {
+        arrivalStackView.addArrangedSubview(arrivalImageView)
+        arrivalStackView.addArrangedSubview(arrivalLabel)
     }
     
-    func setupFlightStatusTagView() {
+    private func setupFlightStatusTagView() {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(self.flightStatusTagView)
-        self.flightStackView.addArrangedSubview(view)
+        view.addSubview(flightStatusTagView)
+        flightStackView.addArrangedSubview(view)
         
         NSLayoutConstraint.activate([
-            self.flightStatusTagView.topAnchor.constraint(equalTo: view.topAnchor),
-            self.flightStatusTagView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            self.flightStatusTagView.trailingAnchor.constraint(lessThanOrEqualTo: view.trailingAnchor, constant: -8),
-            self.flightStatusTagView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            flightStatusTagView.topAnchor.constraint(equalTo: view.topAnchor),
+            flightStatusTagView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            flightStatusTagView.trailingAnchor.constraint(lessThanOrEqualTo: view.trailingAnchor, constant: -8),
+            flightStatusTagView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
     }
 }

@@ -168,10 +168,11 @@ class FlightDetailViewController: UIViewController {
         airplaneNameLabel.text = viewModel.flight.airplaneName
         
         if let flightStatus = viewModel.flight.status {
-            flightStatusTagView.bind(tag: flightStatus.rawValue, color: flightStatus.color)
+            flightStatusTagView.bind(tag: flightStatus.rawValue.capitalized, color: flightStatus.color)
         }
         
-        flightCompletionStatusTagView.bind(tag: viewModel.flight.completionStatus, color: .red)
+        flightCompletionStatusTagView.bind(tag: viewModel.flight.completionStatus.value, color: viewModel.flight.completionStatus.color)
+        flightCompletionStatusTagView.isHidden = viewModel.flight.completionStatus == .canceled
         
         departureImageView.image = Images.airplaneDeparture
         arrivalImageView.image = Images.airplaneArrival
@@ -187,7 +188,7 @@ class FlightDetailViewController: UIViewController {
 }
 
 extension FlightDetailViewController {
-    func setupLayout() {
+    private func setupLayout() {
         view.addSubview(stackView)
         view.addSubview(flightStackView)
         view.addSubview(flightStatusTagView)
@@ -202,7 +203,7 @@ extension FlightDetailViewController {
         setupFlightCompletionStatusTagView()
     }
     
-    func setupStackView() {
+    private func setupStackView() {
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
             stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -215,17 +216,17 @@ extension FlightDetailViewController {
         stackView.addArrangedSubview(arrivalStackView)
     }
     
-    func setupDepartureStackView() {
+    private func setupDepartureStackView() {
         departureStackView.addArrangedSubview(departureImageView)
         departureStackView.addArrangedSubview(departureLabel)
     }
     
-    func setupArrivalStackView() {
+    private func setupArrivalStackView() {
         arrivalStackView.addArrangedSubview(arrivalImageView)
         arrivalStackView.addArrangedSubview(arrivalLabel)
     }
     
-    func setupFlightStackView() {
+    private func setupFlightStackView() {
         NSLayoutConstraint.activate([
             flightStackView.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 16),
             flightStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
@@ -239,14 +240,14 @@ extension FlightDetailViewController {
         flightStackView.addArrangedSubview(arrivalTimeLabel)
     }
     
-    func setupFlightStatusTagView() {
+    private func setupFlightStatusTagView() {
         NSLayoutConstraint.activate([
             flightStatusTagView.topAnchor.constraint(equalTo: flightStackView.bottomAnchor, constant: 16),
             flightStatusTagView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16)
         ])
     }
     
-    func setupFlightCompletionStatusTagView() {
+    private func setupFlightCompletionStatusTagView() {
         NSLayoutConstraint.activate([
             flightCompletionStatusTagView.centerYAnchor.constraint(equalTo: flightStatusTagView.centerYAnchor),
             flightCompletionStatusTagView.leadingAnchor.constraint(equalTo: flightStatusTagView.trailingAnchor, constant: 16)

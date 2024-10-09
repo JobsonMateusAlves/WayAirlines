@@ -39,7 +39,7 @@ extension Flight {
         DomainLayer.Flight(
             flightId: flightId,
             status: DomainLayer.Flight.Status(rawValue: status),
-            completionStatus: completionStatus,
+            completionStatus: DomainLayer.Flight.CompletionStatus(rawValue: completionStatus) ?? .onTime,
             departureDateTime: Date.from(string: "\(startDate) \(departureTime)") ?? Date(),
             arrivalDateTime: Date.from(string: "\(endDate) \(arrivalTime)") ?? Date(),
             departureAirport: departureAirport,

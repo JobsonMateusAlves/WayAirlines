@@ -68,7 +68,7 @@ extension FilterViewController {
         setupTableViewLayout()
     }
     
-    func setupHeaderLabelLayout() {
+    private func setupHeaderLabelLayout() {
         NSLayoutConstraint.activate([
             headerLabel.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 8),
             headerLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16),
@@ -76,7 +76,7 @@ extension FilterViewController {
         ])
     }
     
-    func setupTableViewLayout() {
+    private func setupTableViewLayout() {
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: self.headerLabel.bottomAnchor, constant: 8),
             tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),

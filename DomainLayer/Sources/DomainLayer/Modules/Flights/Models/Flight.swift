@@ -13,9 +13,15 @@ public struct Flight: Equatable {
         case canceled = "CANCELADO"
     }
     
+    public enum CompletionStatus: String {
+        case delayed = "ATRASOU"
+        case onTime = "NO_HORARIO"
+        case canceled = "CANCELADO"
+    }
+    
     public let flightId: String
     public let status: Status?
-    public let completionStatus: String
+    public let completionStatus: CompletionStatus
     public let departureDateTime: Date
     public let arrivalDateTime: Date
     public let departureAirport: String
@@ -24,7 +30,7 @@ public struct Flight: Equatable {
     public let arrivalAirportAbbreviation: String
     public let airplaneName: String
     
-    public init(flightId: String, status: Status?, completionStatus: String, departureDateTime: Date, arrivalDateTime: Date, departureAirport: String, arrivalAirport: String, departureAirportAbbreviation: String, arrivalAirportAbbreviation: String, airplaneName: String) {
+    public init(flightId: String, status: Status?, completionStatus: CompletionStatus, departureDateTime: Date, arrivalDateTime: Date, departureAirport: String, arrivalAirport: String, departureAirportAbbreviation: String, arrivalAirportAbbreviation: String, airplaneName: String) {
         self.flightId = flightId
         self.status = status
         self.completionStatus = completionStatus
