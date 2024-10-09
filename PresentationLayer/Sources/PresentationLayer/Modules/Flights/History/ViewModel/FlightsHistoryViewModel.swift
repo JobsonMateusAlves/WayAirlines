@@ -15,19 +15,19 @@ public protocol FlightsHistoryViewModelProtocol {
     func list(status: FlightStatus, completion: @escaping () -> Void)
 }
 
-public class FlightsHistoryViewModel: FlightsHistoryViewModelProtocol {
+class FlightsHistoryViewModel: FlightsHistoryViewModelProtocol {
     let useCase: ListFlightsUseCaseProtocol
     
     var flightStatus: FlightStatus = .all
     
-    public var flights: [Flight] = []
-    public var error: String?
+    var flights: [Flight] = []
+    var error: String?
     
-    public init(useCase: ListFlightsUseCaseProtocol) {
+    init(useCase: ListFlightsUseCaseProtocol) {
         self.useCase = useCase
     }
     
-    public func list(status: FlightStatus, completion: @escaping () -> Void) {
+    func list(status: FlightStatus, completion: @escaping () -> Void) {
         self.flightStatus = status
         self.useCase.execute(
             status: flightStatus

@@ -7,19 +7,19 @@
 
 import Foundation
 
-protocol GetNextFlightLeavingUseCaseProtocol {
+public protocol GetNextFlightLeavingUseCaseProtocol {
     func execute(completion: @escaping (Flight?, String?) -> Void)
 }
 
-public class GetNextFlightLeavingUseCase: GetNextFlightLeavingUseCaseProtocol {
+class GetNextFlightLeavingUseCase: GetNextFlightLeavingUseCaseProtocol {
     
     let repository: FlightsRepositoryProtocol
     
-    public init(repository: FlightsRepositoryProtocol) {
+    init(repository: FlightsRepositoryProtocol) {
         self.repository = repository
     }
     
-    public func execute(completion: @escaping (Flight?, String?) -> Void) {
+    func execute(completion: @escaping (Flight?, String?) -> Void) {
         Task { @MainActor in
             do {
                 let results = try await self.repository.list()

@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class FlightsHistoryViewController: UIViewController {
+class FlightsHistoryViewController: UIViewController {
     let tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -17,7 +17,7 @@ public class FlightsHistoryViewController: UIViewController {
     
     private let viewModel: FlightsHistoryViewModelProtocol
     
-    public init(viewModel: FlightsHistoryViewModelProtocol) {
+    init(viewModel: FlightsHistoryViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -26,7 +26,7 @@ public class FlightsHistoryViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
 
         self.setupLayout()
@@ -61,15 +61,15 @@ extension FlightsHistoryViewController {
 
 extension FlightsHistoryViewController: UITableViewDelegate, UITableViewDataSource {
     
-    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         160
     }
     
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         self.viewModel.flights.count
     }
     
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "FlightTableViewCell", for: indexPath) as? FlightTableViewCell else {
             return UITableViewCell()

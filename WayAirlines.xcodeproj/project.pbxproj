@@ -21,6 +21,7 @@
 		F65528702CB34CBE00731803 /* PresentationLayer in Frameworks */ = {isa = PBXBuildFile; productRef = F655286F2CB34CBE00731803 /* PresentationLayer */; };
 		F6AF79D82CB60E7800925FB7 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AF79D72CB60E7700925FB7 /* MainCoordinator.swift */; };
 		F6AF79DA2CB6105800925FB7 /* FlightsHistoryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AF79D92CB6105800925FB7 /* FlightsHistoryCoordinator.swift */; };
+		F6AF79DD2CB6168600925FB7 /* FlightsHistoryFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AF79DC2CB6168600925FB7 /* FlightsHistoryFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		F65528662CB34CA500731803 /* PresentationLayer */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = PresentationLayer; sourceTree = "<group>"; };
 		F6AF79D72CB60E7700925FB7 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		F6AF79D92CB6105800925FB7 /* FlightsHistoryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsHistoryCoordinator.swift; sourceTree = "<group>"; };
+		F6AF79DC2CB6168600925FB7 /* FlightsHistoryFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsHistoryFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 		F655282D2CB34B9000731803 /* WayAirlines */ = {
 			isa = PBXGroup;
 			children = (
+				F6AF79DB2CB6157800925FB7 /* Factories */,
 				F6AF79D62CB60DDF00925FB7 /* Coordinators */,
 				F655282E2CB34B9000731803 /* AppDelegate.swift */,
 				F65528302CB34B9000731803 /* SceneDelegate.swift */,
@@ -160,6 +163,14 @@
 				F6AF79D92CB6105800925FB7 /* FlightsHistoryCoordinator.swift */,
 			);
 			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		F6AF79DB2CB6157800925FB7 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				F6AF79DC2CB6168600925FB7 /* FlightsHistoryFactory.swift */,
+			);
+			path = Factories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,6 +318,7 @@
 				F6AF79D82CB60E7800925FB7 /* MainCoordinator.swift in Sources */,
 				F655282F2CB34B9000731803 /* AppDelegate.swift in Sources */,
 				F65528312CB34B9000731803 /* SceneDelegate.swift in Sources */,
+				F6AF79DD2CB6168600925FB7 /* FlightsHistoryFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -20,16 +20,7 @@ class FlightsHistoryCoordinator: Coordinator {
     }
     
     func start() {
-        let viewController = FlightsHistoryViewController(
-            viewModel: FlightsHistoryViewModel(
-                useCase: ListFlightsUseCase(
-                    repository: FlightsRepository(
-                        provider: FlightsProviderFactory.make(config: .mock)
-                    )
-                )
-            )
-        )
-        
+        let viewController = FlightsHistoryFactory.make()
         navigationController.setViewControllers([viewController], animated: false)
     }
 }

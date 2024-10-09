@@ -11,15 +11,15 @@ public protocol ListFlightsUseCaseProtocol {
     func execute(status: FlightStatus, completion: @escaping ([Flight]?, String?) -> Void)
 }
 
-public class ListFlightsUseCase: ListFlightsUseCaseProtocol {
+class ListFlightsUseCase: ListFlightsUseCaseProtocol {
     
     let repository: FlightsRepositoryProtocol
     
-    public init(repository: FlightsRepositoryProtocol) {
+    init(repository: FlightsRepositoryProtocol) {
         self.repository = repository
     }
     
-    public func execute(status: FlightStatus, completion: @escaping ([Flight]?, String?) -> Void) {
+    func execute(status: FlightStatus, completion: @escaping ([Flight]?, String?) -> Void) {
         Task { @MainActor in
             do {
                 let now = DateSystem.shared.getNow()
