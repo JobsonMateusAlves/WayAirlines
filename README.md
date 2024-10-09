@@ -16,12 +16,12 @@ Além disso, o sistema oferece uma funcionalidade que destaca de forma intuitiva
 
 As decisões tomadas no desenvolvimento deste projeto de teste foram pensadas para simular um projeto profissional.
 
-Abordagem:
+### Abordagem:
 
 Opto pela Utilização do ViewCode para garantir maior controle sobre a construção da interface e facilitação da manutenção e personalização do layout programaticamente. Além disso, em um projeto profissional onde há vários profissionais essa abordagem evita conflitos em arquivos .storyboard e .xibs.
 
  
-Arquitetura:
+### Arquitetura:
 
 Optei pela utilização da Clean Architecture para garantir um codigo organizado, escalável e testável.
 
@@ -29,6 +29,6 @@ O padrão MVVM permite uma melhor organização da camada de apresentação poss
 
 O padrão Coordinators permite que a resposabilidade da navegação seja delegada para os coordinators, que gerenciam o fluxo de navegação de forma independente.
 
-Serviço:
+### Serviço:
 
 Foi criado um provider ja preparado para a utilização em requisições reais mas, como solicitado, o app utiliza as informações do arquivo flights.json. Para isso foi criado um MockURLSession que é responsavel pela leitura do arquivo e é passado como dependencia para o Provider que utiliza esta classe como se fosse um URLSession comum.
