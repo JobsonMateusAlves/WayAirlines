@@ -136,6 +136,7 @@ class FlightTableViewCell: UITableViewCell {
         if let flightStatus = flight.status {
             flightStatusTagView.bind(tag: flightStatus.rawValue.capitalized, color: flightStatus.color)
         }
+        flightStatusTagView.isHidden = flight.status == nil
         
         departureImageView.image = Images.airplaneDeparture
         arrivalImageView.image = Images.airplaneArrival

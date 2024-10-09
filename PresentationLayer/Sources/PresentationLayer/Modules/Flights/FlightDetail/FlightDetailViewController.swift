@@ -170,6 +170,7 @@ class FlightDetailViewController: UIViewController {
         if let flightStatus = viewModel.flight.status {
             flightStatusTagView.bind(tag: flightStatus.rawValue.capitalized, color: flightStatus.color)
         }
+        flightStatusTagView.isHidden = viewModel.flight.status == nil
         
         flightCompletionStatusTagView.bind(tag: viewModel.flight.completionStatus.value, color: viewModel.flight.completionStatus.color)
         flightCompletionStatusTagView.isHidden = viewModel.flight.completionStatus == .canceled
